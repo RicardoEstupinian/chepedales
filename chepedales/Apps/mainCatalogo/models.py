@@ -20,7 +20,6 @@ class PublicacionPedal(models.Model):
 	imgPedal = models.ImageField(upload_to='static/img', blank=True)
 	urlVideo = models.CharField(max_length=50)
 	puntuacion = models.FloatField()
-	precio = models.FloatField()
 	fecha_publicacion = models.DateField()
 	autor_publicacion = models.CharField(max_length=50)
 	evaluada = models.BooleanField(default=False)
