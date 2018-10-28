@@ -1,0 +1,71 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block Bhead %}
+   <link rel="stylesheet" href="{% static 'css/miCatalogo.css' %}">
+{% endblock%}
+
+{%block body%}
+<br><br>
+	<ul class="nav nav-tabs row mt-3">
+        <li class="nav-item col-3 text-center">
+            <a href="{% url 'catalogo' 'Distorsion' %}" class="nav-link {{activo.0}}"  id="a1">Distorsion</a>
+        </li>
+        <li class="nav-item col-3 text-center">
+            <a href="{% url 'catalogo' 'Chorus'%}" class="nav-link  {{activo.7}} " id="a1">Chorus</a>
+        </li>
+        <li class="nav-item col-3 text-center">
+            <a href="{% url 'catalogo' 'Reverb'%}" class="nav-link {{activo.3}} " id="a1">Reverb</a>
+        </li>
+        <li class="nav-item col-3 text-center">
+            <a href="{% url 'catalogo' 'Overdrive'%}" class="nav-link {{activo.2}} " id="a1">Overdrive</a>
+        </li>
+</ul>
+<ul class="nav nav-tabs row mt-3">
+        <li class="nav-item col-3 text-center">
+            <a href="{% url 'catalogo' 'Phaser' %}" class="nav-link {{activo.4}} " id="a1">Phaser</a>
+        </li>
+        <li class="nav-item col-3 text-center">
+            <a href="{% url 'catalogo' 'Flanger'%}" class="nav-link {{activo.5}} " id="a1">Flanger</a>
+        </li>
+        <li class="nav-item col-3 text-center">
+            <a href="{% url 'catalogo' 'Wah'%}" class="nav-link {{activo.6}} " id="a1">Wah</a>
+        </li>
+        <li class="nav-item col-3 text-center">
+            <a href="{% url 'catalogo' 'Delay'%}" class="nav-link {{activo.1}} " id="a1">Delay</a>
+        </li>
+</ul>
+
+<div class="container_sim">
+    {% if hay_pedales %}
+    <h2 class="bg-warning text-danger mt-3 text-center p-2">Efecto de {{efecto}}</h2>
+    {% else %}
+    <h2 class="bg-warning text-danger mt-3 text-center p-2">No se encuentran publicaciones de este Efecto</h2>
+    {% endif %}
+    {% for p in pedales  %}
+    <div class="row publicacion my-3 mx-0">
+        <div class="col-12">
+            <div class="row titulo">
+                 <h3 class="text-center col-12 ">{{p.nombre_pedal}}</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6"><p>Marca:</p><p>{{p.marca}}</p></div>
+                <div class="col-lg-3 col-md-4 col-sm-6"><p>Modelo:</p><p>{{p.modelo}}</p></div>
+                <div class="col-lg-3 col-md-12 col-sm-12">
+                    <div class="row my-1">
+                        <div class="col-lg-12 col-md-4 my-1">
+                            <a href="#" title="" class="btn btn-block btn-primary font-weight-bold">Ver Publicación</a>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+<br>
+	
+              
+            
+
+            
+{%endblock%}

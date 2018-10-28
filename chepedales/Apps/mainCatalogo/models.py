@@ -15,6 +15,7 @@ class PublicacionPedal(models.Model):
 	nombre_pedal = models.CharField(max_length=50)
 	marca = models.CharField(max_length=50)
 	modelo = models.CharField(max_length=50)
+	precio = models.FloatField ()
 	descripcion_pedal = models.CharField(max_length=1000)
 	imgPedal = models.ImageField(upload_to='static/img', blank=True)
 	urlVideo = models.CharField(max_length=50)
