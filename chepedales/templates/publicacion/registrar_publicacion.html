@@ -1,0 +1,100 @@
+{% extends 'base/base.html' %}
+
+
+{%block body%}
+
+<form method="post" enctype='multipart/form-data'>
+	{% csrf_token %}
+	<div class="div1">
+	<div class="row">
+		<div class="col-md-5">
+			<div class="form-group">
+				<label>Nombre del pedal</label>
+				<input class="form-control" type="text" name="nombre_pedal">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-5">
+			<div class="form-group">
+				<label >Marca</label>
+				<input class="form-control" type="text" name="marca">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-5">
+			<div class="form-group">
+				<label >Modelo</label>
+				<input class="form-control" type="text" name="modelo">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-5">
+			<div class="form-group">
+				<label >Precio</label>
+				<input class="form-control" type="text" name="precio">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+        <div class="col-md-5">
+          <label >Efecto</label>
+          {{ form.efecto }}
+        </div>
+      </div>
+	<div class="row">
+		<div class="col-md-5">
+			<div class="form-group">
+				<label >Fecha de publicación</label>
+				<input class="form-control" type="date" name="fecha_publicacion">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-5">
+			<div class="form-group">
+				<label >Autor publicación</label>
+				<input class="form-control" type="text" name="autor_publicacion">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-5">
+			<div class="form-group">
+				<label >Seleccionar imagen</label>
+				<input type="file" name="imgPedal" class="btnSeleccionar">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-5">
+			<div class="form-group">
+				<label >Seleccionar video</label>
+				<input type="file" name="video" class="btnSeleccionar">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-5">
+			<div class="form-group">
+				<label >Descripción</label>
+				<textarea class="form-control" type="text" name="descripcion_pedal"> </textarea>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-5">
+			<div class="form-group">
+				<button class="btn btn-primary btn-lg btn-block" type="submit" class="btnGuardar">Guardar</button>
+			</div>
+		</div>
+	</div>
+	</div>
+</form>
+
+
+{%endblock%}
+{% block footer %}
+{% endblock %}

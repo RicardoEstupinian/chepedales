@@ -9,6 +9,7 @@
         <title>Chepedales</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="{% static 'css/plantilla.min.css'%}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css'%}" />
     </head>
 
 
@@ -49,6 +50,7 @@
         {%endblock%}
 
         <!--Footer-->
+        {% block footer%}
         <footer>
             <div class="alert alert-dismissible alert-danger">
                 
@@ -59,6 +61,7 @@
                 <strong>Facebook</strong> This <a href="#" class="alert-link">Logo Facebook</a>, Mas
             </div>
         </footer>
+        {% endblock %}
     </body>
 
 
