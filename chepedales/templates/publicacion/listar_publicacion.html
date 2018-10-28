@@ -1,0 +1,71 @@
+{% extends 'base/base.html' %}
+
+
+{%block body%}
+
+{% if publicaciones %}
+<table class="table table-bordered">
+		<thead>
+			<tr>
+				<td>Id</td>
+				<td>Nombre del pedal</td>
+				<td>Efecto del pedal</td>
+				<td>Marca</td>
+				<td>Modelo</td>
+				<td>Descripcion del pedal</td>
+				<td>Imagen</td>
+				<td>Video</td>
+				<td>Puntuacion</td>
+				<td>Precio</td>
+				<td>Fecha de publicacion</td>
+				<td>Autor de publicacion</td>
+				<td>Evaluada</td>
+				<td>Aprobar</td>
+			</tr>
+		</thead>
+		<tbody>
+
+		
+
+		{% for publicacion in publicaciones %}
+         
+		
+		<tr>
+			<td>{{ publicacion.id }}</td>
+			<td>{{ publicacion.nombre_pedal }}</td>
+			<td>{{ publicacion.efecto }}</td>
+			<td>{{ publicacion.marca }}</td>
+			<td>{{ publicacion.modelo }}</td>
+			<td>{{ publicacion.descripcion_pedal }}</td>
+			<td>
+				<div class="text-center">
+        			<img src="{{ publicacion.imgPedal.url }}" class="img-responsive" width="100">
+        		</div>
+        	</td>
+            <td>
+            	<video width="320" height="240" controls>
+					<source src="{{publicacion.video.url}}" type="video/mp4">
+				</video>
+        	</td>
+			<td>{{ publicacion.puntuacion }}</td>
+			<td>{{ publicacion.precio }}</td>
+			<td>{{ publicacion.fecha_publicacion }}</td>
+			<td>{{ publicacion.autor_publicacion }}</td>
+			<td>{{ publicacion.evaluada }}</td>
+			<td>{{ publicacion.aprobada }}</td>
+		</tr>
+			{% endfor %}
+
+			{% else %}
+			<h1 class="text-center">No hay publicacion por mostrar</h1>
+
+{% endif %}
+
+	</tbody>
+</table>
+
+{% endblock %}
+
+
+{% block footer %}
+{% endblock %}
