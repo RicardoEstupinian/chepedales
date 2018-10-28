@@ -6,15 +6,17 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Chepedales</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        {%block tituloPagina%}
+        <title>Chepedales</title>
+        {%endblock%}
 
         <!--Link para archivo de plantilla-->
         <link rel="stylesheet" type="text/css" href="{% static 'css/plantilla.min.css'%}" />
         <!--Para iconos-->
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}" />
     </head>
-
 
     <body>
 
@@ -86,8 +88,9 @@
             </div>
             </div>
         </footer>
+
+        {%block script%} {%endblock%}
+
     </body>
-
-
 
 </html>
