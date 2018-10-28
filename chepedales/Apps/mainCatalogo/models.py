@@ -15,18 +15,14 @@ class PublicacionPedal(models.Model):
 	nombre_pedal = models.CharField(max_length=50)
 	marca = models.CharField(max_length=50)
 	modelo = models.CharField(max_length=50)
-	precio = models.FloatField ()
 	descripcion_pedal = models.CharField(max_length=1000)
-<<<<<<< HEAD
 	imgPedal = models.ImageField(upload_to='static/img', blank=True)
 	urlVideo = models.CharField(max_length=50)
 	puntuacion = models.FloatField()
-=======
 	imgPedal = models.FileField(upload_to='static/img/', blank=True, null=True)
 	video = models.FileField(upload_to='static/video/', blank=True, null=True)
 	puntuacion = models.FloatField(default=0)
 	precio = models.FloatField()
->>>>>>> 38aaf7fc861890a6ea7c84bf25346390fbfb85c1
 	fecha_publicacion = models.DateField()
 	autor_publicacion = models.CharField(max_length=50)
 	evaluada = models.BooleanField(default=False)

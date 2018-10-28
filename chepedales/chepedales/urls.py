@@ -22,13 +22,10 @@ from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-<<<<<<< HEAD
     path('base/',views.base),
     path('catalogo/',include('Apps.mainCatalogo.urls')),
-=======
     path('base/',views.base, name="index"),
     path('publicacion/', include(('Apps.publicacion.urls', 'publicacion'), namespace='publicacion')),
->>>>>>> 38aaf7fc861890a6ea7c84bf25346390fbfb85c1
 ]
 
 if settings.DEBUG:
