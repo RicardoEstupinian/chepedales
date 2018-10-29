@@ -1,0 +1,87 @@
+{% extends 'base/base.html' %}
+
+
+{% block body%}
+
+	{% if o_publicacion %}
+<div class="container">
+	<div class="div2">
+    	<video width="600" controls>
+			<source src="{{o_publicacion.video.url}}" type="video/mp4">
+		</video>
+
+{% if o_publicacion.aprobada == True %}
+<form method="post">
+	{% csrf_token %}
+ <div class="start">
+  <p class="clasificacion">
+    <input id="radio1" type="radio" name="puntuacion" value="5">
+    <label for="radio1" class="slabel">★</label>
+    <input id="radio2" type="radio" name="puntuacion" value="4">
+    <label for="radio2" class="slabel">★</label>
+    <input id="radio3" type="radio" name="puntuacion" value="3">
+    <label for="radio3" class="slabel">★</label>
+    <input id="radio4" type="radio" name="puntuacion" value="2">
+    <label for="radio4" class="slabel">★</label>
+    <input id="radio5" type="radio" name="puntuacion" value="1">
+    <label for="radio5" class="slabel">★</label>
+  </p>
+  <div class="btnCalificar">
+	<button class="btn btn-primary btn-lg" type="submit" class="btnGuardar">Calificar</button>
+  </div>
+ </div>
+</form>
+{% else %}
+<form method="post">
+	{% csrf_token %}
+	<div class="btnConsultar">
+		<button type="submit" class="btn btn-primary btn-lg btn-block" name="btnAprobar">Aprobar</button>
+		<button type="submit" class="btn btn-danger btn-lg btn-block" name="btnRechazar">Rechazar</button>
+	</div>
+</form>
+</div>
+{% endif %}
+    	
+<div id="desc">
+	<table class="ptable">
+		<tbody>
+			<tr>
+				<h4>
+					<strong>Información sobre el pedal:</strong> {{o_publicacion.nombre_pedal}}
+				</h4>
+				<hr>
+			<tr>
+        		<td><strong>Efecto del pedal:</strong></td>
+		        <td>{{ o_publicacion.efecto }}</td>
+        		<td><strong>Marca:</strong></td>
+        		<td>{{ o_publicacion.marca }}</td>
+    		</tr>
+		    <tr>
+		        <td><strong>Autor de la publicación:</strong></td>
+		        <td>{{ o_publicacion.autor_publicacion }}</td>
+		        <th><strong>Modelo:</strong></th>
+		        <td>{{ o_publicacion.modelo }}</td>
+		    </tr>
+		    <tr>
+		        <td><strong>Fecha de publicación:</strong></td>
+		        <td>{{ o_publicacion.fecha_publicacion }}</td>
+		        <th><strong>Precio:</strong></th>
+		        <td>${{ o_publicacion.precio }}</td>
+		    </tr>
+		        
+		</tbody>
+	</table>	
+	<hr>
+	<strong>Descripción:</strong>
+	<h6>{{o_publicacion.descripcion_pedal}}</h6>
+</div>
+</div>
+{% else %}
+	<h1>No se encontró información de este pedal</h1>
+{% endif %}   
+
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
