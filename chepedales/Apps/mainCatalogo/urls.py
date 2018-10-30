@@ -6,5 +6,7 @@ from django.urls import include
 from .views import catalogo 
 
 urlpatterns = [
-    path('<efectoP>/',catalogo, name= "catalogo"),    
+	path('',catalogo, name= "catalogo_p"),  
+    path('<efectoP>/',catalogo, name= "catalogo"), 
+
 ]

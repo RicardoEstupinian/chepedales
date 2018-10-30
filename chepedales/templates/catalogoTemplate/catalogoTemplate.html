@@ -6,9 +6,9 @@
 
 {%block body%}
 <br><br>
-	<ul class="nav nav-tabs row mt-3">
+	<ul class="nav nav-tabs row mt-3 mx-5">
         <li class="nav-item col-3 text-center">
-            <a href="{% url 'catalogo' 'Distorsion' %}" class="nav-link {{activo.0}}"  id="a1">Distorsion</a>
+            <a href="{% url 'catalogo_p' %}" class="nav-link {{activo.0}}"  id="a1">Distorsion</a>
         </li>
         <li class="nav-item col-3 text-center">
             <a href="{% url 'catalogo' 'Chorus'%}" class="nav-link  {{activo.7}} " id="a1">Chorus</a>
@@ -20,7 +20,7 @@
             <a href="{% url 'catalogo' 'Overdrive'%}" class="nav-link {{activo.2}} " id="a1">Overdrive</a>
         </li>
 </ul>
-<ul class="nav nav-tabs row mt-3">
+<ul class="nav nav-tabs row mt-3 mx-5">
         <li class="nav-item col-3 text-center">
             <a href="{% url 'catalogo' 'Phaser' %}" class="nav-link {{activo.4}} " id="a1">Phaser</a>
         </li>
@@ -35,37 +35,59 @@
         </li>
 </ul>
 
-<div class="container_sim">
-    {% if hay_pedales %}
-    <h2 class="bg-warning text-danger mt-3 text-center p-2">Efecto de {{efecto}}</h2>
-    {% else %}
-    <h2 class="bg-warning text-danger mt-3 text-center p-2">No se encuentran publicaciones de este Efecto</h2>
-    {% endif %}
+
+    {% if hay_pedales and hay_efecto %}
+    <h2 class="bg-warning text-danger mt-3 text-center p-2 mx-5">Efecto de {{efecto}}</h2>
     {% for p in pedales  %}
-    <div class="row publicacion my-3 mx-0">
+    <div class="container_sim">
+    <div class="row publicacion my-4 mx-5">
         <div class="col-12">
             <div class="row titulo">
                  <h3 class="text-center col-12 ">{{p.nombre_pedal}}</h3>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-4 col-sm-6"><p>Marca:</p><p>{{p.marca}}</p></div>
-                <div class="col-lg-3 col-md-4 col-sm-6"><p>Modelo:</p><p>{{p.modelo}}</p></div>
+                <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="row my-1">
+                        <div class="col-lg-12 col-md-4 my-1">
+                            <p class="enter">Marca:</p><p class="psenter"> {{p.marca}}</p>
+                        </div>
+                        <div class="col-lg-12 col-md-4 my-1">
+                            <p class="enter">Modelo:</p><p class="psenter"> {{p.modelo}}</p>
+                        </div> 
+                        <div class="col-lg-12 col-md-4 my-1">
+                            <p class="enter">Precio:</p><p class="psenter"> ${{p.precio}}</p>
+                        </div> 
+                        <div class="col-lg-12 col-md-4 my-1">
+                            <p class="enter">Fecha de publicacion:</p><p class="psenter"> {{p.fecha_publicacion}}</p>
+                        </div> 
+                        <div class="col-lg-12 col-md-4 my-1">
+                            <p class="enter">Autor:</p><p class="psenter">{{p.autor_publicacion}}</p>
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-8 col-sm-12">
+                    <p class="enter">Descripcion:</p><p>{{p.descripcion_pedal}}</p>
+                </div>
                 <div class="col-lg-3 col-md-12 col-sm-12">
                     <div class="row my-1">
+                        <div class="col-lg-12 col-md-4 my-1">
+                            <div class="text-center">
+                                <img src="{{ p.imgPedal.url }}" class="img-responsive" width="250" height="250" >
+                            </div>
+                        </div>
                         <div class="col-lg-12 col-md-4 my-1">
                             <a href="#" title="" class="btn btn-block btn-primary font-weight-bold">Ver Publicación</a>
                         </div>  
                     </div>
                 </div>
+
+
             </div>
         </div>
     </div>
+    </div>  
     {% endfor %}
-    </div>
-<br>
-	
-              
-            
-
-            
+    {% else %}
+    <h2 class="bg-warning text-danger mt-3 text-center p-2 mx-5">No se encuentran publicaciones de este Efecto</h2>
+    {% endif %}          
 {%endblock%}
