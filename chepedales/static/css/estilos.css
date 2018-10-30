@@ -71,15 +71,15 @@ input[type="radio"]:checked ~ label {
 	border-width: 2px;
 
 	padding: 10px;
+	margin-top: 9.3%;
 	position: absolute;
 	left: 55%;
 	right: 0px;
-	top: 23.5%;
+	top: 0px;
 	bottom: 0px;
 	width: 43%;
 	height: 71%;
 	text-align: justify;
-	opacity: 50%;
 }
 
 .ptable{
@@ -104,7 +104,6 @@ hr{
 }
 
 .div2{
-
 	margin-top: 6%;
 	margin-right: 45.5%;;
 }
