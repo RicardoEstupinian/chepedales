@@ -14,10 +14,18 @@
 
         <!--Link para archivo de plantilla-->
         <link rel="stylesheet" type="text/css" href="{% static 'css/plantilla.min.css'%}" />
+<<<<<<< HEAD
 
         <!--Para iconos-->
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}" />
         
+=======
+        <!--Para iconos-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}" />
+        {% block Bhead %}
+        {% endblock %}
+
+>>>>>>> 0dedc1e87b2bababb1478a647bad82347d3ac657
         <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css'%}" />
     </head>
 
@@ -92,11 +100,9 @@
             </div>
             </div>
         </footer>
-<<<<<<< HEAD
-=======
         {% endblock %}
     </body>
->>>>>>> eceda00906dbdd17ccb4df773dd649a8c7b4166d
+
 
         {%block script%} {%endblock%}
 

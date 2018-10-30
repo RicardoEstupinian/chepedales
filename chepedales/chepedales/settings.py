@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'Apps.mainCatalogo',
     'Apps.login',
     'Apps.publicacion',
+<<<<<<< HEAD
+=======
+    'Apps.admSolicitudes',
+>>>>>>> 0dedc1e87b2bababb1478a647bad82347d3ac657
 ]
 
 MIDDLEWARE = [
