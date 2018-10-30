@@ -2,6 +2,7 @@
 	padding-left: 10%;
 	padding-top: 2%;
 	font-weight: bold;
+	/*color: #E95420;*/
 }
 
 .btnSeleccionar{
@@ -10,4 +11,99 @@
 
 .btnGuardar{
 	width: 200px;
+}
+
+#vPublicacion{
+	border-style: solid;
+	border-color: #E95420;
+	border-radius: 10px;	
+
+}
+
+
+
+#form p {
+  text-align: center;
+}
+
+#form label {
+  font-size: 20px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.slabel {
+  color: white;
+  font-size: 100px;
+  text-shadow: -1px -1px 1px #000, 1px 1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+.slabel:hover, .slabel:hover ~ .slabel {
+  color: #E95420;
+}
+
+input[type="radio"]:checked ~ label {
+  color: #E95420;
+}
+
+.start{
+	height: 25%;
+
+}
+
+.btnCalificar{
+	position: relative;
+	left: 75%;
+	bottom: 75%;
+}
+
+#desc{
+	border-style: solid;
+	border-color: #E95420;;
+	border-radius: 10px;
+	border-width: 2px;
+
+	padding: 10px;
+	margin-top: 9.3%;
+	position: absolute;
+	left: 55%;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+	width: 43%;
+	height: 71%;
+	text-align: justify;
+}
+
+.ptable{
+  border-collapse: separate;
+  border-spacing: 15px 10px;
+}
+
+.btnConsultar{
+	padding: 0.5%;
+}
+
+video{
+	border-radius: 10px;
+}
+
+img{
+	border-radius: 10px;
+}
+
+hr{
+	border-color: #E95420;
+}
+
+.div2{
+	margin-top: 6%;
+	margin-right: 45.5%;;
 }
