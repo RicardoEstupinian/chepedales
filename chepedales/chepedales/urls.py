@@ -23,9 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/',include('Apps.login.urls')),
     path('catalogo/',include('Apps.mainCatalogo.urls')),
-    path('base/',views.base, name="index"),
     path('publicacion/', include(('Apps.publicacion.urls', 'publicacion'), namespace='publicacion')),
-
+    path('login/',include('Apps.login.urls')),
 ]
 
 if settings.DEBUG:

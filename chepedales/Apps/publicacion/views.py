@@ -46,10 +46,6 @@ class MostrarPublicacion(ListView):
 	def get_context_data(self, **kwargs):
 		context = super(MostrarPublicacion, self).get_context_data(**kwargs)
 		o_publicacion = PublicacionPedal.objects.get(id=self.kwargs['pk'])
-		a_publicacion = ''
 
-		if o_publicacion.aprobada == True:
-			context["o_publicacion"] = o_publicacion
-		else:
-			context["o_publicacion"] = o_publicacion
+		context["o_publicacion"] = o_publicacion
 		return context
