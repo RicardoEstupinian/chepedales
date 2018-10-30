@@ -38,11 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Apps.mainCatalogo',
-<<<<<<< HEAD
     'Apps.login',
-=======
     'Apps.publicacion',
->>>>>>> eceda00906dbdd17ccb4df773dd649a8c7b4166d
 ]
 
 MIDDLEWARE = [
