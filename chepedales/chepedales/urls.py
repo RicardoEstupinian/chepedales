@@ -26,6 +26,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('catalogo/',include('Apps.mainCatalogo.urls')),
     path('publicacion/', include(('Apps.publicacion.urls', 'publicacion'), namespace='publicacion')),
+    path('login/',include('Apps.login.urls')),
+    path('administracion/',include('Apps.admSolicitudes.urls')),
     path('', include('Apps.login.urls','registro'),name='registro'),
     path('logout/',logout_then_login,name='logout'),
 ]
