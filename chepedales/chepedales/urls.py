@@ -25,6 +25,7 @@ urlpatterns = [
     path('catalogo/',include('Apps.mainCatalogo.urls')),
     path('publicacion/', include(('Apps.publicacion.urls', 'publicacion'), namespace='publicacion')),
     path('login/',include('Apps.login.urls')),
+    path('administracion/',include('Apps.admSolicitudes.urls')),
 ]
 
 if settings.DEBUG:

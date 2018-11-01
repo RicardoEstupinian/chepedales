@@ -1,0 +1,54 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{%block tituloPagina%}
+    <title>Solicitudes</title>
+{%endblock%}
+
+
+{% block Bhead%}
+ <link rel="stylesheet" href="{% static 'css/estiloSolicitudes.css' %}">
+{%endblock%}
+
+{% block body %}
+
+<header ><h2 class="cabecera">Solicitudes pendiente de revision</h2></header>
+
+{% if solicitudes %}
+
+<div class="container"> 
+    <table class="table table-striped">
+ 	  <thead>
+    	<tr>
+      		<th scope="col">Usuario</th>
+      		<th scope="col"> Nombre pedal</th>
+      		<th scope="col">Fecha</th>
+      		<th scope="col">Accion</th>
+    
+		</tr>
+	   </thead>
+	   <tbody>
+           {% for solicitud in solicitudes %}
+		<tr>
+      		<td>{% contexto.solicitud.autor_publicacion}</td>
+      		<td>{% contexto.solicitud.nombre_pedal}</td>
+      		<td> {% contexto.solicitud.fecha_publicacion}</td>
+      		<td> a</td>
+      		
+     </tr>
+ 	  </tbody>
+            {% endfor %}
+
+			 {% else %}
+			     <h3 class="vacio"> Sin publicacion pendientes a evaluar, asi que puedes tomar un descanso :) </h3>
+
+{% endif %}
+        
+    </table>
+    
+</div>
+
+{%endblock%}
+
+{% block footer %}
+{% endblock %}
