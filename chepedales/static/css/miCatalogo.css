@@ -1,11 +1,11 @@
 .publicacion{
-	background: #9AE8DB; 
-	font-weight: bold;
-	/* color:white; */
+	background-color: rgba(0, 0,0, 0.1); 
+	font-family: sans-serif;
 	border-radius: 20px;
 	position: relative;
 	top: 1em;
 	bottom: 1em;
+	
 }
 input[type=submit]{
 	font-weight: bold;
@@ -25,3 +25,12 @@ input[type=submit]{
 			   4px -4px lightgreen,5px -5px lightgreen,6px -6px lightgreen,
 			   7px -7px lightgreen,8px -8px lightgreen,9px -9px lightgreen;
 }
+.psenter{
+	display: inline;
+} 
+.enter{
+	display: inline;
+	font-weight: bold;
+} 
+
+
