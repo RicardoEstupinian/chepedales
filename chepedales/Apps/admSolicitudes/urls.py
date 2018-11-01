@@ -4,6 +4,6 @@ from django.contrib.auth.decorators import login_required
 app_name = 'admSolicitudes'
 urlpatterns = [
    
-	path('solicitud', (views.solicitud)),
+	path('solicitud', login_required(views.solicitud), name= "solicitud"),
      
 ] 

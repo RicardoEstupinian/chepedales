@@ -6,6 +6,7 @@ from django.shortcuts import redirect
 # Create your views here.
 
 def catalogo(request, efectoP='Distorsion'):
+	activo = ['actives','','','','','','','']
 	if efectoP == 'Distorsion':
 		activo = ['actives','','','','','','','']
 	if efectoP == 'Delay':

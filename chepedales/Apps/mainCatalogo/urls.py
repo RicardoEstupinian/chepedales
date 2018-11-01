@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from .views import catalogo 
 
 urlpatterns = [
-	path('',login_required(catalogo), name= "catalogo_p"),  
-    path('<efectoP>/',login_required(catalogo), name= "catalogo"), 
+	path('',catalogo, name= "catalogo_p"),  
+    path('<efectoP>/',catalogo, name= "catalogo"), 
 
 ]
