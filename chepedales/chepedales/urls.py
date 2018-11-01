@@ -14,18 +14,25 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+
+
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from chepedales import views
+from django.contrib.auth.views import logout_then_login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/',include('Apps.login.urls')),
     path('catalogo/',include('Apps.mainCatalogo.urls')),
     path('publicacion/', include(('Apps.publicacion.urls', 'publicacion'), namespace='publicacion')),
+<<<<<<< HEAD
     path('login/',include('Apps.login.urls')),
     path('administracion/',include('Apps.admSolicitudes.urls')),
+=======
+    path('', include('Apps.login.urls','registro'),name='registro'),
+    path('logout/',logout_then_login,name='logout'),
+>>>>>>> 9ae737f5d756c5991578bad7f86e9ad28cf0e678
 ]
 
 if settings.DEBUG:

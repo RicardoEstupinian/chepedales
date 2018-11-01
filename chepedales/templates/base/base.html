@@ -15,18 +15,14 @@
         <!--Link para archivo de plantilla-->
         <link rel="stylesheet" type="text/css" href="{% static 'css/plantilla.min.css'%}" />
 
-
         <!--Para iconos-->
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}" />
-        
+        <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css'%}" />
 
-        <!--Para iconos-->
-        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}" />
         {% block Bhead %}
         {% endblock %}
 
-
-        <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css'%}" />
+        
     </head>
 
     <body>
@@ -54,7 +50,7 @@
                         <a class="nav-link" href="#"><span class="icon-accessibility"></span> Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="icon-cross"></span> Salir</a>
+                        <a class="nav-link" href="{% url 'logout' %}"><span class="icon-cross"></span> Salir</a>
                     </li>
                 </ul>
 
