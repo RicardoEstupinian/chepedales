@@ -29,7 +29,7 @@
 	   </thead>
 	   <tbody>
            {% if solicitudes %}
-           {% for solicitud in solicitudes %}
+            {% for solicitud in solicitudes %}
 		<tr>
       		<td>{{ solicitud.autor_publicacion}}</td>
       		<td>{{ solicitud.nombre_pedal}}</td>
@@ -40,10 +40,10 @@
  	  </tbody>
             {% endfor %}
 
-			 {% else %}
-			     <h3 class="vacio"> Sin publicacion pendientes a evaluar, asi que puedes tomar un descanso :) </h3>
+			     {% else %}
+			         <h3 class="vacio"> Sin publicacion pendientes a evaluar, asi que puedes tomar un descanso :) </h3>
 
-{% endif %}
+            {% endif %}
         
     </table>
     
