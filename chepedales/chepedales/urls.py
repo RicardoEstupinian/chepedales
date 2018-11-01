@@ -20,13 +20,13 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from chepedales import views
-from django.contrib.auth.views import login, logout_then_login
+from django.contrib.auth.views import logout_then_login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('catalogo/',include('Apps.mainCatalogo.urls')),
     path('publicacion/', include(('Apps.publicacion.urls', 'publicacion'), namespace='publicacion')),
-    path('', include('Apps.login.urls'),name='login'),
+    path('', include('Apps.login.urls','registro'),name='registro'),
     path('logout/',logout_then_login,name='logout'),
 ]
 

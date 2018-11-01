@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-
+from django import forms
 
 
 class Registrar(UserCreationForm):
@@ -19,4 +19,5 @@ class Registrar(UserCreationForm):
             'last_name': 'Apellidos',
             'email': 'Correo',
         }
+
 

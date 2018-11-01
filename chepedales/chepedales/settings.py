@@ -131,4 +131,4 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_env", "static_root
 MEDIA_DIRS = (os.path.join(BASE_DIR, 'static/media'),)
 
 LOGIN_REDIRECT_URL= reverse_lazy('publicacion:publicacion_registrar')
-LOGOUT_REDIRECT_URL= reverse_lazy('login')
+LOGOUT_REDIRECT_URL= reverse_lazy('registro:login')
