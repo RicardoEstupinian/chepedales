@@ -30,6 +30,7 @@ urlpatterns = [
     path('administracion/',include('Apps.admSolicitudes.urls')),
     path('', include('Apps.login.urls','registro'),name='registro'),
     path('logout/',logout_then_login,name='logout'),
+    path('Favoritos/', include('Apps.top10.urls')),
 ]
 
 if settings.DEBUG:
