@@ -4,5 +4,5 @@ from Apps.top10.views import top
 from django.urls import path
 
 urlpatterns=[
-    path('top/', views.top, name="top"),
+    path('', views.top, name="top"),
 ]
