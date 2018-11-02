@@ -14,7 +14,7 @@
 
 <header ><h2 class="cabecera">Solicitudes pendiente de revision</h2></header>
 
-{% if solicitudes %}
+
 
 <div class="container"> 
     <table class="table table-striped">
@@ -28,21 +28,24 @@
 		</tr>
 	   </thead>
 	   <tbody>
-           {% for solicitud in solicitudes %}
+           {% if solicitudes %}
+            {% for solicitud in solicitudes %}
+            {%if solicitud.aprobada == False %}
 		<tr>
-      		<td>{% contexto.solicitud.autor_publicacion}</td>
-      		<td>{% contexto.solicitud.nombre_pedal}</td>
-      		<td> {% contexto.solicitud.fecha_publicacion}</td>
-      		<td> a</td>
+      		<td>{{ solicitud.autor_publicacion}}</td>
+      		<td>{{ solicitud.nombre_pedal}}</td>
+      		<td> {{ solicitud.fecha_publicacion}}</td>
+      		<td> <a href="{% url 'publicacion:mostrar_publicacion' solicitud.id %}"  class="btn btn-light">Ver detalles</a> </td>
       		
      </tr>
  	  </tbody>
+    {% endif %}
             {% endfor %}
 
-			 {% else %}
-			     <h3 class="vacio"> Sin publicacion pendientes a evaluar, asi que puedes tomar un descanso :) </h3>
+			     {% else %}
+			         <h3 class="vacio"> Sin publicacion pendientes a evaluar, asi que puedes tomar un descanso :) </h3>
 
-{% endif %}
+            {% endif %}
         
     </table>
     

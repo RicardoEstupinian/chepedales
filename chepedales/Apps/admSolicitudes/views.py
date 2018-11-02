@@ -6,7 +6,7 @@ from Apps.mainCatalogo.models import PublicacionPedal
 
 def solicitud(request):
     
-	solicitudes = PublicacionPedal.objects.all().filter(evaluada=False)
-	contexto = {'solicitudes': solicitudes}
+	solicitud = PublicacionPedal.objects.all()
+	contexto = {'solicitudes': solicitud}
 	return render (request,'admSolicitudes/admSolicitudes.html',contexto)
 
