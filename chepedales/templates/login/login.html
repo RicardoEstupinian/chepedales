@@ -1,19 +1,24 @@
+{% extends 'base/base.html' %}
 {%load staticfiles%}
+
 <!DOCTYPE html>
 <html>
 
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        {% block tituloPagina%}
         <title>Chepedales | Login</title>
+        {%endblock%}
+
+        {% block Bhead %}
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.css' %}" />
         <link rel="stylesheet" type="text/css" href="{%static 'css/login.css' %}" />
+        {% endblock %}
 
-        <!--Para iconos-->
-        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}" />
     </head>
-
+    {%block body%}
     {% if request.path == '/registro/'%}
 
     <body class="bg-dark" onload="document.getElementById('t').click() "></body>
@@ -197,5 +202,6 @@
             }
         </script>
     </body>
+    {%endblock%}
 
 </html>

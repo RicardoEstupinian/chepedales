@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'Apps.login',
     'Apps.publicacion',
     'Apps.admSolicitudes',
+    'Apps.top10',
 ]
 
 MIDDLEWARE = [
