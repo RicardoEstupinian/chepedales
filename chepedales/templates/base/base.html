@@ -1,6 +1,6 @@
 {% load staticfiles %}
 
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
     <head>
@@ -14,19 +14,22 @@
 
         <!--Link para archivo de plantilla-->
         <link rel="stylesheet" type="text/css" href="{% static 'css/plantilla.min.css'%}" />
+
         <!--Para iconos-->
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css'%}" />
+
         {% block Bhead %}
         {% endblock %}
 
-        <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css'%}" />
+        
     </head>
 
     <body>
 
         <!--Menu de Navegacion-->
         <nav class="navbar navbar-expand-lg  navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">Chepedales</a>
+            <a class="navbar-brand" href="{% url 'catalogo_p' %}">Chepedales</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
                 aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -35,20 +38,36 @@
             <div class="collapse navbar-collapse d-block" id="navbarColor01">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link active" href="#"><span class="icon-home"></span> Inicio</a>
+                        <a class="nav-link active" href="{% url 'catalogo_p' %}"><span class="icon-home"></span> Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="icon-music"></span> Efectos de Guitarra</a>
+                        <a class="nav-link" href="{% url 'top' %}"><span class="icon-music"></span> Pedales favoritos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="icon-share2"></span> Publicar</a>
+                        <a class="nav-link" href="{% url 'publicacion:publicacion_registrar' %}"><span class="icon-share2"></span> Publicar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admSolicitudes:solicitud' %}"><span class="icon-share2"></span> Solicitudes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><span class="icon-accessibility"></span> Nosotros</a>
                     </li>
+
+                    {% if request.user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="icon-cross"></span> Salir</a>
+                        <a class="nav-link" href="{% url 'catalogo_p' %}"><span class="icon-user"></span> Bienvenido: {{user.username}}</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}"><span class="icon-cross"></span> Salir</a>
+                    </li>
+                    {%else%}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'registro:login' %}"><span class="icon-user"></span> Iniciar Sesión</a>
+                    </li>
+                    {% endif %}
+
+                    
+
                 </ul>
 
             </div>
@@ -62,7 +81,7 @@
         {% block footer%}
         <footer>
             <div class="row p-3">
-                <div class="col-lg-3">
+                <div class="col-lg-3" id="a">
                     <div class="alert alert-dismissible w-100 alert-danger d-inline-block">
                         <a href="#" class="alert-link"><span class="icon-youtube2"></span></a><strong> Youtube</strong>
                         <p>Mantente al tanto de los videos y contenido para ti.</p>
@@ -70,21 +89,21 @@
                 </div>
 
 
-                <div class="col-lg-3">
+                <div class="col-lg-3" id="b">
                     <div class="alert alert-dismissible w-100 alert-info d-inline-block ">
                         <span class="icon-facebook"></span></a><strong> Faceebok</strong>
                         <p class="align-center">Siguenos y comparte con nostros tu pasion.</p>
                     </div>
                 </div>
 
-                <div class="col-lg-3">
+                <div class="col-lg-3" id="c">
                     <div class="alert alert-dismissible w-100 alert-primary d-inline-block">
                         <a href="#" class="alert-link"><span class="icon-google-plus"></span></a><strong> GooglePlus</strong>
                         <p>Comparte con la comunidad de musicos del pais.</p>
                     </div>
                 </div>
 
-                <div class="col-lg-3">
+                <div class="col-lg-3"id="d">
                     <div class="alert alert-dismissible w-100 alert-success d-inline-block">
                         <a href="#" class="alert-link"><span class="icon-twitter"></span></a><strong> Twitter</strong>
                         <p>Esten pendientes, de frases celebres de musicos.</p>

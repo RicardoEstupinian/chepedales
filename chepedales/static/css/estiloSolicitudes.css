@@ -1,0 +1,20 @@
+.container {
+    
+ position: relative;  
+ top: 100px;
+  
+}
+
+.cabecera{
+    position: relative;
+    top: 40px;
+    left: 80px;
+}
+
+.vacio{
+    
+    position: relative;
+    top: 100px;
+    left: 80px;
+    
+}

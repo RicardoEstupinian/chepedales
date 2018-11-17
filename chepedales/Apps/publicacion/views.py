@@ -10,7 +10,7 @@ class PublicacionCreate(CreateView):
 	model = PublicacionPedal
 	form_class = PublicacionForm
 	template_name = 'publicacion/registrar_publicacion.html'
-	success_url = reverse_lazy('index')
+	success_url = reverse_lazy('catalogo_p')
 
 def listar_publicacion(request):
 	publicaciones = PublicacionPedal.objects.all().order_by('id')
@@ -27,11 +27,11 @@ class MostrarPublicacion(ListView):
 		if 'btnAprobar' in request.POST:
 			publicacion.aprobada = True
 			publicacion.save()
-			return HttpResponseRedirect(reverse('index'))
+			return HttpResponseRedirect(reverse('admSolicitudes:solicitud'))
 
 		if 'btnRechazar' in request.POST:
 			publicacion.delete()
-			return HttpResponseRedirect(reverse('index'))
+			return HttpResponseRedirect(reverse('admSolicitudes:solicitud'))
 
 		try:
 			valor=float(request.POST.get('puntuacion'))
@@ -41,7 +41,7 @@ class MostrarPublicacion(ListView):
 			publicacion.puntuacion +=valor
 			publicacion.save()
 
-			return HttpResponseRedirect(reverse('index')) #Redireccionará a la pagina del top 10
+			return HttpResponseRedirect(reverse('top')) #Redireccionará a la pagina del top 10
 
 	def get_context_data(self, **kwargs):
 		context = super(MostrarPublicacion, self).get_context_data(**kwargs)

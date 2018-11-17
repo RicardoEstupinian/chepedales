@@ -616,8 +616,8 @@ pre code {
   position: relative;
   width: 100%;
   min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 0px;
+  padding-left: 0px;
 }
 
 .col {
@@ -6072,8 +6072,8 @@ button.close {
   vertical-align: text-top !important;
 }
 
-.bg-primary {
-  background-color: #007bff !important;
+.bg-primary{
+  background-color:#E95420 !important
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -9027,4 +9027,13 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
+
+#a,#b,#c,#d{
+  position:relative;
+  width:100%;
+  min-height:1px;
+  padding-right:15px;
+  padding-left:15px
+}
+
 /*# sourceMappingURL=bootstrap.css.map */
