@@ -4,6 +4,13 @@
 	font-weight: bold;
 	/*color: #E95420;*/
 }
+.cont{
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 5%;
+	font-weight: bold;
+	/*color: #E95420;*/
+}
 
 .btnSeleccionar{
 	color: #C2C0C0;
@@ -59,27 +66,20 @@ input[type="radio"]:checked ~ label {
 }
 
 .btnCalificar{
-	position: relative;
+	position: absolute;
 	left: 75%;
-	bottom: 75%;
+	bottom: 13%;
+	right: 0px;
 }
 
-#desc{
+.desc{
 	border-style: solid;
 	border-color: #E95420;;
 	border-radius: 10px;
 	border-width: 2px;
 
-	padding: 10px;
-	margin-top: 9.3%;
-	position: absolute;
-	left: 55%;
-	right: 0px;
-	top: 0px;
-	bottom: 0px;
-	width: 43%;
+	width: 100%;
 	height: 71%;
-	text-align: justify;
 }
 
 .ptable{
