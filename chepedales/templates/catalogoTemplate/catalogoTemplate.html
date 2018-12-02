@@ -89,5 +89,12 @@
     {% endfor %}
     {% else %}
     <h2 class="bg-warning text-danger mt-3 text-center p-2 mx-5">No se encuentran publicaciones de este Efecto</h2>
-    {% endif %}          
+    {% endif %}
+ <div class="jumbotron  mx-5">
+  <h1 class="display-4"><a name="funcion"> </a>ChePedales!</h1>
+  <p class="lead">El propósito y razón de ser de nuestra pagina es proporcionar un espacio donde personas de diferentes lugares del mundo puedan compartir sus conocimientos y experiencias con los pedales.</p>
+  <hr class="my-4">
+  <p>¿Ya compartiste los tuyos? ¿Qué esperas?.</p>
+  <a class="btn btn-primary btn-lg" href="{% url 'publicacion:publicacion_registrar' %}" role="button">Publicar</a>
+</div>          
 {%endblock%}

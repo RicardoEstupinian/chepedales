@@ -38,7 +38,8 @@ class MostrarPublicacion(ListView):
 		except:
 			return render(request, 'publicacion/mostrar_publicacion.html', {'publicacion': publicacion, 'error_message': 'vaya, hubo un error'})
 		else:
-			publicacion.puntuacion +=valor
+			pb = publicacion.puntuacion
+			publicacion.puntuacion =(valor+pb)/2
 			publicacion.save()
 
 			return HttpResponseRedirect(reverse('top')) #Redireccionará a la pagina del top 10

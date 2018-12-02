@@ -21,6 +21,8 @@
 
         {% block Bhead %}
         {% endblock %}
+        {% block meta %}
+        {% endblock %}
 
         
     </head>
@@ -29,7 +31,9 @@
 
         <!--Menu de Navegacion-->
         <nav class="navbar navbar-expand-lg  navbar-dark bg-primary">
-            <a class="navbar-brand" href="{% url 'catalogo_p' %}">Chepedales</a>
+            <a class="navbar-brand page-scroll sticky-logo" href="{% url 'catalogo_p' %}">
+            <h1><img src="{% static 'img/logo.png' %}" width="200" height="80"><span></span></h1>
+            <a class="navbar-brand" href="{% url 'catalogo_p' %}"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
                 aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -47,13 +51,15 @@
                         <a class="nav-link" href="{% url 'publicacion:publicacion_registrar' %}"><span class="icon-share2"></span> Publicar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'admSolicitudes:solicitud' %}"><span class="icon-share2"></span> Solicitudes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="icon-accessibility"></span> Nosotros</a>
+                        <a class="nav-link" href="/catalogo#funcion/"><span class="icon-accessibility"></span> Nosotros</a>
                     </li>
 
                     {% if request.user.is_authenticated %}
+                    {% if request.user.is_staff %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admSolicitudes:solicitud' %}"><span class="icon-share2"></span> Solicitudes</a>
+                    </li>
+                    {%endif%}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'catalogo_p' %}"><span class="icon-user"></span> Bienvenido: {{user.username}}</a>
                     </li>
@@ -83,7 +89,7 @@
             <div class="row p-3">
                 <div class="col-lg-3" id="a">
                     <div class="alert alert-dismissible w-100 alert-danger d-inline-block">
-                        <a href="#" class="alert-link"><span class="icon-youtube2"></span></a><strong> Youtube</strong>
+                        <a href="https://www.instagram.com/chepedales/" class="alert-link"><span class="icon-youtube2"></span></a><strong> Instagram</strong>
                         <p>Mantente al tanto de los videos y contenido para ti.</p>
                     </div>
                 </div>
@@ -91,7 +97,7 @@
 
                 <div class="col-lg-3" id="b">
                     <div class="alert alert-dismissible w-100 alert-info d-inline-block ">
-                        <span class="icon-facebook"></span></a><strong> Faceebok</strong>
+                        <a href="https://www.facebook.com/ChepeDales-575147906223895/" class="alert-link"><span class="icon-facebook"></span></a><strong> Faceebok</strong>
                         <p class="align-center">Siguenos y comparte con nostros tu pasion.</p>
                     </div>
                 </div>
@@ -105,7 +111,7 @@
 
                 <div class="col-lg-3"id="d">
                     <div class="alert alert-dismissible w-100 alert-success d-inline-block">
-                        <a href="#" class="alert-link"><span class="icon-twitter"></span></a><strong> Twitter</strong>
+                        <a href="https://twitter.com/ChepeDales" class="alert-link"><span class="icon-twitter"></span></a><strong> Twitter</strong>
                         <p>Esten pendientes, de frases celebres de musicos.</p>
                     </div>
                 </div>
