@@ -4,7 +4,7 @@ from Apps.mainCatalogo.models import PublicacionPedal
 
 # Create your views here.
 def top(request):
-	topPu = PublicacionPedal.objects.all().order_by('-puntuacion')[:10]
+	topPu = PublicacionPedal.objects.filter(aprobada=True).order_by('-puntuacion')[:10]
 	for top in topPu:
 		top.puntuacion = round(top.puntuacion,2)
 	contexto = {'topPu': topPu}
