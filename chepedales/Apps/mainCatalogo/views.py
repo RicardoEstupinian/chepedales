@@ -35,19 +35,11 @@ def catalogo(request, efectoP='Distorsion'):
 	else:
 		pedales = ''
 
-	resultado = suma(5,7)
-	print(resultado)
-
 	contexto = {
 	'hay_efecto': hay_efecto,
 	'hay_pedales':hay_pedales,
 	'efecto': efectoP,
 	'activo' : activo,
-	'pedales' : pedales,
-	'resultado': resultado
+	'pedales' : pedales
 	}
 	return render (request, 'catalogoTemplate/catalogoTemplate.html', contexto)
-
-def suma(a,b):
-	x = a+b
-	return x
